@@ -1,6 +1,3 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import Saludo from "./components/Saludo";
 import Releevant from "./components/Releevant";
 import goku from "./assets/goku.png";
