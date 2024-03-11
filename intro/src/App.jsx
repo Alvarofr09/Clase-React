@@ -10,7 +10,7 @@ function App() {
 	return (
 		<>
 			<Saludo />
-			<img src={goku} alt="Goku" />
+			<img src={goku} alt="Goku" className="Goku" />
 			<Saludo />
 			<Releevant />
 		</>
