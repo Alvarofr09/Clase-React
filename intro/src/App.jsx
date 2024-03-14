@@ -7,6 +7,7 @@ import Saludo from "./components/Saludo";
 import Card from "./components/Card";
 import Input from "./components/Input";
 import Lista from "./components/Lista";
+import Button from "./components/Button";
 
 const characters = [
 	{
@@ -63,6 +64,8 @@ function App() {
 					/>
 				))}
 			</div>
+			<Button />
+
 			<Lista title={"Estudiantes"} items={Students} />
 			<Lista title={"Usuarios"} items={users} />
 
