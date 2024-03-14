@@ -1,7 +1,7 @@
-export default function Button() {
+export default function Button({name}) {
 	function handleClick() {
-		alert("Hello World!");
+		alert(`Bienvenido ${name} a nuestra App`);
 	}
 
-	return <button onClick={handleClick}>Click aqui</button>;
+	return <button onClick={() => handleClick(name)}>Click aqui</button>;
 }
