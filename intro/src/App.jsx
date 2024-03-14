@@ -64,8 +64,8 @@ function App() {
 					/>
 				))}
 			</div>
-			<Button />
-
+			<Button name="Alvaro"/>
+			<Button name="Pepe"/>
 			<Lista title={"Estudiantes"} items={Students} />
 			<Lista title={"Usuarios"} items={users} />
 
