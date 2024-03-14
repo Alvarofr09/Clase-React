@@ -1,11 +1,15 @@
-export default function Lista({ title, students }) {
+export default function Lista({ title, items }) {
 	return (
 		<>
 			<h1>Lista de {title}</h1>
 			<ul>
-				{students.map((student) => (
-					<li key={student}>{student}</li>
-				))}
+				{items.map((item) => {
+					if (typeof item === "object") {
+						return <li key={item.id}>{item.name}</li>;
+					} else {
+						return <li key={item}>{item}</li>;
+					}
+				})}
 			</ul>
 		</>
 	);
