@@ -26,6 +26,25 @@ const characters = [
 ];
 
 const Students = ["Alvaro", "Pepe", "Pepa"];
+
+const users = [
+	{
+		id: 1,
+		name: "Alvaro",
+	},
+	{
+		id: 2,
+		name: "Pepe",
+	},
+	{
+		id: 3,
+		name: "Pablo",
+	},
+	{
+		id: 4,
+		name: "Nacho",
+	},
+];
 function App() {
 	return (
 		<>
@@ -44,7 +63,8 @@ function App() {
 					/>
 				))}
 			</div>
-			<Lista title={"Estudiantes"} students={Students} />
+			<Lista title={"Estudiantes"} items={Students} />
+			<Lista title={"Usuarios"} items={users} />
 
 			<h2>Releevant :)</h2>
 		</>
