@@ -52,7 +52,8 @@ function App() {
 	const [count, setCount] = useState(0);
 
 	function increment() {
-		setCount(count + 1);
+		setTimeout(() => setCount((prevValue) => prevValue + 1), 2000);
+		// setCount(count + 1);
 	}
 	function decrement() {
 		setCount(count - 1);
