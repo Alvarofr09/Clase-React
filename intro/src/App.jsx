@@ -29,6 +29,7 @@ const characters = [
 ];
 
 const Students = ["Alvaro", "Pepe", "Pepa"];
+const animals = ["Perro", "Gato", "Conejo"];
 
 const users = [
 	{
@@ -50,6 +51,7 @@ const users = [
 ];
 function App() {
 	const [count, setCount] = useState(0);
+	const [] = useState(animals);
 
 	function increment() {
 		setTimeout(() => setCount((prevValue) => prevValue + 1), 2000);
