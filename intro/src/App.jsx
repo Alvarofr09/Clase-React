@@ -29,7 +29,7 @@ const characters = [
 ];
 
 const Students = ["Alvaro", "Pepe", "Pepa"];
-const animals = ["Perro", "Gato", "Conejo"];
+const animalsArray = ["Perro", "Gato", "Conejo"];
 
 const users = [
 	{
@@ -51,7 +51,7 @@ const users = [
 ];
 function App() {
 	const [count, setCount] = useState(0);
-	const [] = useState(animals);
+	const [animals, setAnimals] = useState(animalsArray);
 
 	function increment() {
 		setTimeout(() => setCount((prevValue) => prevValue + 1), 2000);
@@ -64,6 +64,10 @@ function App() {
 		setCount(0);
 	}
 
+	function addAnimal() {
+		setAnimals([...animals, "T-rex"]);
+	}
+
 	return (
 		<>
 			<Saludo name="Alvaro" />
@@ -73,6 +77,8 @@ function App() {
 			<button onClick={decrement}>Disminuir</button>
 			<button onClick={reset}>Resetear</button>
 			<Saludo name="Pepe" />
+			<Lista title={"Animales"} items={animals} />
+			<button onClick={addAnimal}>Añadir T-rex</button>
 			<Input label="Alvaro" placeholder="Escribe tu nombre" value="Alvaro" />
 			<div style={{ display: "flex" }}>
 				{characters.map((character) => (
