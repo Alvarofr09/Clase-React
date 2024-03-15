@@ -1,13 +1,15 @@
-import Vegeta from "./assets/Vegeta.jpg";
-import goku from "./assets/goku_manga.avif";
-
-import "./App.css";
+import { useState } from "react";
 
 import Saludo from "./components/Saludo";
 import Card from "./components/Card";
 import Input from "./components/Input";
 import Lista from "./components/Lista";
 import Button from "./components/Button";
+
+import Vegeta from "./assets/Vegeta.jpg";
+import goku from "./assets/goku_manga.avif";
+
+import "./App.css";
 
 const characters = [
 	{
@@ -47,10 +49,26 @@ const users = [
 	},
 ];
 function App() {
+	const [count, setCount] = useState(0);
+
+	function increment() {
+		setCount(count + 1);
+	}
+	function decrement() {
+		setCount(count - 1);
+	}
+	function reset() {
+		setCount(0);
+	}
+
 	return (
 		<>
 			<Saludo name="Alvaro" />
 			{/* <img src={goku} alt="Goku" className="Goku" /> */}
+			<p>El valor de count es: {count}</p>
+			<button onClick={increment}>Incrementar</button>
+			<button onClick={decrement}>Disminuir</button>
+			<button onClick={reset}>Resetear</button>
 			<Saludo name="Pepe" />
 			<Input label="Alvaro" placeholder="Escribe tu nombre" value="Alvaro" />
 			<div style={{ display: "flex" }}>
@@ -64,8 +82,8 @@ function App() {
 					/>
 				))}
 			</div>
-			<Button name="Alvaro"/>
-			<Button name="Pepe"/>
+			<Button name="Alvaro" />
+			<Button name="Pepe" />
 			<Lista title={"Estudiantes"} items={Students} />
 			<Lista title={"Usuarios"} items={users} />
 
