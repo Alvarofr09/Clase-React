@@ -5,6 +5,7 @@ import Card from "./components/Card";
 import Input from "./components/Input";
 import Lista from "./components/Lista";
 import Button from "./components/Button";
+import Animals from "./components/Animals";
 
 import Vegeta from "./assets/Vegeta.jpg";
 import goku from "./assets/goku_manga.avif";
@@ -50,37 +51,28 @@ const users = [
 	},
 ];
 function App() {
-	const [count, setCount] = useState(0);
-	const [animals, setAnimals] = useState(animalsArray);
+	// const [count, setCount] = useState(0);
 
-	function increment() {
-		setTimeout(() => setCount((prevValue) => prevValue + 1), 2000);
-		// setCount(count + 1);
-	}
-	function decrement() {
-		setCount(count - 1);
-	}
-	function reset() {
-		setCount(0);
-	}
+	// function increment() {
+	// 	setTimeout(() => setCount((prevValue) => prevValue + 1), 2000);
+	// }
 
-	function addAnimal() {
-		setAnimals([...animals, "T-rex"]);
-	}
+	// function addAnimal() {
+	// 	setAnimals([...animals, "T-rex"]);
+	// }
 
 	return (
 		<>
-			<Saludo name="Alvaro" />
+			{/* <Saludo name="Alvaro" /> */}
 			{/* <img src={goku} alt="Goku" className="Goku" /> */}
-			<p>El valor de count es: {count}</p>
+			{/* <p>El valor de count es: {count}</p>
 			<button onClick={increment}>Incrementar</button>
 			<button onClick={decrement}>Disminuir</button>
-			<button onClick={reset}>Resetear</button>
-			<Saludo name="Pepe" />
-			<Lista title={"Animales"} items={animals} />
-			<button onClick={addAnimal}>Añadir T-rex</button>
-			<Input label="Alvaro" placeholder="Escribe tu nombre" value="Alvaro" />
-			<div style={{ display: "flex" }}>
+			<button onClick={reset}>Resetear</button> */}
+			{/* <Saludo name="Pepe" /> */}
+			<Animals />
+			<br />
+			{/* <div style={{ display: "flex" }}>
 				{characters.map((character) => (
 					<Card
 						key={character.id}
@@ -92,9 +84,9 @@ function App() {
 				))}
 			</div>
 			<Button name="Alvaro" />
-			<Button name="Pepe" />
-			<Lista title={"Estudiantes"} items={Students} />
-			<Lista title={"Usuarios"} items={users} />
+			<Button name="Pepe" /> */}
+			{/* <Lista title={"Estudiantes"} items={Students} /> */}
+			{/* <Lista title={"Usuarios"} items={users} /> */}
 
 			<h2>Releevant :)</h2>
 		</>
