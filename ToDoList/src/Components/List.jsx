@@ -1,10 +1,16 @@
 import { useState } from "react";
 
 export default function List({ items }) {
-	const [isCompleted, setIsCompleted] = useState("false");
+	// Creamos un estado para almacenar los estados de los items
+	const [completedItems, setCompletedItems] = useState({});
 
-	function handleClick(e) {
-		setIsCompleted(!isCompleted);
+	// Función para manejar el click a un ítem
+	function handleClick(id) {
+		// Actualizamos el estado de completado para el item correspondiente
+		setCompletedItems((prevCompletedItems) => ({
+			...prevCompletedItems,
+			[id]: !prevCompletedItems[id], // Invertimos el estado de completado
+		}));
 	}
 	return (
 		<>
@@ -12,16 +18,16 @@ export default function List({ items }) {
 				{items.map((item) =>
 					typeof item === "object" ? (
 						<li
-							className={isCompleted ? "completed" : null}
-							onClick={handleClick}
+							className={completedItems[item.id] ? "completed" : null}
+							onClick={() => handleClick(item.id)}
 							key={item.id}
 						>
 							{item.name}
 						</li>
 					) : (
 						<li
-							className={isCompleted ? "completed" : null}
-							onClick={handleClick}
+							className={completedItems[item] ? "completed" : null}
+							onClick={() => handleClick(item)}
 							key={item}
 						>
 							{item}
