@@ -2,7 +2,13 @@ import { useState } from "react";
 
 import Input from "./Input";
 
-export default function Form({ state, setState }) {
+export default function Form({
+	state,
+	setState,
+	label,
+	placeholder,
+	buttonText,
+}) {
 	const [newItem, setNewItem] = useState("");
 	function handleInput(e) {
 		setNewItem(e.target.value);
@@ -17,12 +23,12 @@ export default function Form({ state, setState }) {
 	return (
 		<form onSubmit={onSubmit}>
 			<Input
-				label="Animal"
-				placeholder="Escribe el animal aqui"
+				label={label}
+				placeholder={placeholder}
 				value={newItem}
 				onChange={handleInput}
 			/>
-			<button>Añadir Animal</button>
+			<button>{buttonText}</button>
 		</form>
 	);
 }

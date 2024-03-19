@@ -11,7 +11,13 @@ export default function Animals() {
 	return (
 		<>
 			<Lista title={"Animales"} items={animals} />
-			<Form state={animals} setState={setAnimals} />
+			<Form
+				state={animals}
+				setState={setAnimals}
+				label="Animal"
+				placeholder="Escribe tu animal aqui"
+				buttonText="Añadir animal"
+			/>
 		</>
 	);
 }
