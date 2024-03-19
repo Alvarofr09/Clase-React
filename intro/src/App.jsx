@@ -6,6 +6,7 @@ import Input from "./components/Input";
 import Lista from "./components/Lista";
 import Button from "./components/Button";
 import Animals from "./components/Animals";
+import Food from "./components/Food";
 
 import Vegeta from "./assets/Vegeta.jpg";
 import goku from "./assets/goku_manga.avif";
@@ -71,6 +72,8 @@ function App() {
 			<button onClick={reset}>Resetear</button> */}
 			{/* <Saludo name="Pepe" /> */}
 			<Animals />
+			<br />
+			<Food />
 			<br />
 			{/* <div style={{ display: "flex" }}>
 				{characters.map((character) => (
