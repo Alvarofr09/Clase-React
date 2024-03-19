@@ -10,7 +10,6 @@ export default function Todo() {
 
 	return (
 		<>
-			<List items={todo} />
 			<Form
 				state={todo}
 				setState={setTodo}
@@ -18,6 +17,7 @@ export default function Todo() {
 				placeholder="Escribe aqui tu tarea"
 				buttonText="Añadir Tarea"
 			/>
+			<List items={todo} />
 		</>
 	);
 }
