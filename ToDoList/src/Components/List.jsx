@@ -3,23 +3,25 @@ import { useState } from "react";
 import Button from "./Button";
 
 export default function List({ items, setState }) {
-	// Creamos un estado para almacenar los estados de los items
-	// const [completedItems, setCompletedItems] = useState({});
-	// const [isCompleted, setIsCompleted] = useState(false);
-
 	function handleClick(id) {
-		const itemsCopy = [...items];
-		const updateItem = itemsCopy.find((item) => item.id === id);
-		updateItem.isCompleted = !updateItem.isCompleted;
-		console.log(updateItem);
+		const updatedItems = items.map((item) => {
+			if (item.id === id) {
+				return {
+					...item,
+					isCompleted: !item.isCompleted,
+				};
+			}
+			return item;
+		});
 
-		setState(updateItem);
+		setState(updatedItems);
 	}
 
-	// function deleteTask(id) {
-	// 	const newItems = items.filter((item) => item.id !== id);
-	// 	setIsCompleted(newItems);
-	// }
+	function deleteTask(id, e) {
+		e.stopPropagation();
+		const newItems = items.filter((item) => item.id !== id);
+		setState(newItems);
+	}
 
 	return (
 		<>
@@ -31,7 +33,7 @@ export default function List({ items, setState }) {
 						key={item.id}
 					>
 						{item.name}
-						{/* <Button text="Delete" onClick={() => deleteTask(item.id)} /> */}
+						<Button text="Delete" onClick={(e) => deleteTask(item.id, e)} />
 					</li>
 				))}
 			</ul>
