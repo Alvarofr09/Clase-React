@@ -30,7 +30,7 @@ export default function List({ items, setState }) {
 						onClick={() => handleClick(item.id)}
 						key={item.id}
 					>
-						{item.name}{" "}
+						{item.name}
 						{/* <Button text="Delete" onClick={() => deleteTask(item.id)} /> */}
 					</li>
 				))}
