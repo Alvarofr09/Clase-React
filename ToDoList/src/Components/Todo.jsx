@@ -3,10 +3,8 @@ import { useState } from "react";
 import Form from "./Form";
 import List from "./List";
 
-const todoList = [];
-
 export default function Todo() {
-	const [todo, setTodo] = useState(todoList);
+	const [todo, setTodo] = useState([]);
 
 	return (
 		<>
@@ -17,7 +15,7 @@ export default function Todo() {
 				placeholder="Escribe aqui tu tarea"
 				buttonText="Añadir Tarea"
 			/>
-			<List items={todo} />
+			<List items={todo} setState={setTodo} />
 		</>
 	);
 }
