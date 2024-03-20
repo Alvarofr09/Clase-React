@@ -15,7 +15,12 @@ export default function Form({
 	}
 	function onSubmit(e) {
 		e.preventDefault();
-		setState([...state, newItem]);
+		const newTask = {
+			id: new Date().getTime(),
+			name: newItem,
+			isCompleted: false,
+		};
+		setState([...state, newTask]);
 		setNewItem("");
 	}
 	return (
