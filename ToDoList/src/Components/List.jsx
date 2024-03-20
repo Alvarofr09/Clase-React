@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import Button from "./Button";
 
 export default function List({ items, setState }) {
