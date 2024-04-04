@@ -1,8 +1,9 @@
 import { useState } from "react";
-import TodoList from "./components/TodoList";
-import Users from "./components/Users";
-import Scroll from "./components/Scroll";
+// import TodoList from "./components/TodoList";
+// import Users from "./components/Users";
+// import Scroll from "./components/Scroll";
 import Developer from "./components/Developer";
+import Modal from "./components/Modal";
 
 /**
  * Ha diferencia de los datos simples, los complejos se guardan en memoria y se guardan por referencia y no por valor
@@ -21,6 +22,7 @@ function App() {
 		<>
 			<Developer developer={developer} />
 			<button onClick={() => setCount(count + 1)}>Incrementar</button>
+			<Modal />
 		</>
 	);
 }
