@@ -1,35 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+const users = [
+	{
+		id: 1,
+		name: "Pepe",
+		score: 5,
+	},
+	{
+		id: 2,
+		name: "Paco",
+		score: 3,
+	},
+];
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+export default function App() {
+	const [currentUser, setCurrentUser] = useState(users[0]);
+
+	function onSelectUser(user) {
+		setCurrentUser(user);
+	}
+
+	return (
+		<div className="App">
+			<h1>Hello CodeSandbox</h1>
+			<ul>
+				{users.map((u) => (
+					<li onClick={() => onSelectUser(u)} key={u.id}>
+						{u.name}
+					</li>
+				))}
+			</ul>
+			<h2>
+				Usuario seleccionado: {currentUser.name} {currentUser.score}
+			</h2>
+			<Score score={currentUser.score} />
+		</div>
+	);
 }
 
-export default App
+function Score({ score }) {
+	const [stars, setStars] = useState(score);
+
+	useEffect(() => {
+		setStars(score);
+	}, [score]);
+
+	function handleSubmit() {
+		alert(stars);
+	}
+
+	function handleChange(event) {
+		setStars(event.target.value);
+	}
+	return (
+		<form onSubmit={handleSubmit}>
+			<input type="text" value={stars} onChange={handleChange} />
+			<button type="submit">Enviar</button>
+			<p>{score}</p>
+		</form>
+	);
+}
