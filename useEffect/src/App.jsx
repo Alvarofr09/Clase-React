@@ -21,9 +21,8 @@ import "./App.css";
 function App() {
 	return (
 		<>
-			<Hora />
-			<Teclado />
-			<Modal />
+			{/* <Developer developer={developer} />
+			<button onClick={() => setCount(count + 1)}>Incrementar</button> */}
 		</>
 	);
 }
