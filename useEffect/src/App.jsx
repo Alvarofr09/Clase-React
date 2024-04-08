@@ -21,6 +21,7 @@ import "./App.css";
 function App() {
 	return (
 		<>
+			{/* {texto} */}
 			<Hora />
 			<Teclado />
 			<Modal />
