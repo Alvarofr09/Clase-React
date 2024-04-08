@@ -1,38 +1,28 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Modal() {
 	const [showModal, setShowModal] = useState(false);
 
 	useEffect(() => {
-		const timeout = setTimeout(() => {
-			setShowModal(false);
-		}, 3000);
-
-		return () => clearTimeout(timeout);
+		const modal = document.querySelector(".modal");
+		if (!showModal) {
+			modal.style.display = "none";
+		} else {
+			modal.style.display = "block";
+		}
 	}, [showModal]);
-
 	return (
 		<div>
 			<h1>Modal</h1>
-			<button onClick={() => setShowModal(true)}>Mostrar modal</button>
-			<Ventana showModal={showModal} setShowModal={setShowModal} />
-		</div>
-	);
-}
+			<button onClick={() => setShowModal(true)}>Abrir Modal</button>
 
-function Ventana({ showModal }) {
-	return (
-		<div
-			style={{
-				width: "200px",
-				height: "200px",
-				backgroundColor: "black",
-				color: "white",
-				display: showModal ? "flex" : "none",
-			}}
-		>
-			<h1>Ventana</h1>
+			<div
+				className="modal"
+				style={{ width: "100px", height: "100px", backgroundColor: "red" }}
+			>
+				<p>Contenido Modal</p>
+				<button onClick={() => setShowModal(false)}>Cerrar modal</button>
+			</div>
 		</div>
 	);
 }
