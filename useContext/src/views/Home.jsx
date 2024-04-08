@@ -4,6 +4,8 @@
 
 // Importamos la funcion que nos da el contexto
 import { useAuthContext } from "../contexts/AuthContext";
+import Counter from "../ejercicios/Counter";
+import Theme from "../ejercicios/Theme";
 
 export default function Home() {
 	// Esta es la version que hemos remplazado, que tienes que usar tanto el uso del contexto como el contexto.
@@ -18,6 +20,8 @@ export default function Home() {
 			<p>
 				{userInfo.name} {userInfo.surname}
 			</p>
+			<Counter />
+			<Theme />
 		</>
 	);
 }
