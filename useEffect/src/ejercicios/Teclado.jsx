@@ -14,7 +14,7 @@ export default function Teclado() {
 				setTecla(e.key);
 			});
 		};
-	});
+	}, []);
 
 	return (
 		<div>
