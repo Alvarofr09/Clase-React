@@ -1,11 +1,9 @@
 import { useGaleryContext } from "../contexts/GaleryContext";
 
-export default function Gallery() {
-	const { currentCategory, images, changeCategory } = useGaleryContext();
+import GalleryNav from "./GalleryNav";
 
-	const handleChangeCategory = (category) => {
-		changeCategory(category);
-	};
+export default function Gallery() {
+	const { currentCategory, images } = useGaleryContext();
 
 	const filteredImages =
 		currentCategory === "all"
@@ -16,12 +14,7 @@ export default function Gallery() {
 		<>
 			<h2>Gallery</h2>
 
-			<div>
-				<button onClick={() => handleChangeCategory("all")}>Todas</button>
-				<button onClick={() => handleChangeCategory("Goku")}>Goku</button>
-				<button onClick={() => handleChangeCategory("Vegeta")}>Vegeta</button>
-				<button onClick={() => handleChangeCategory("Broly")}>Broly</button>
-			</div>
+			<GalleryNav />
 
 			<div>
 				{filteredImages.map((image) => {
