@@ -23,6 +23,7 @@ export default function GalleryContextProvider({ children }) {
 		{ id: 5, category: "Broly", url: Broly },
 		{ id: 6, category: "Broly", url: Broly2 },
 	];
+	const categories = ["all", "Goku", "Vegeta", "Broly"];
 
 	const changeCategory = (category) => {
 		setCurrentCategory(category);
@@ -30,7 +31,7 @@ export default function GalleryContextProvider({ children }) {
 
 	return (
 		<GalleryContext.Provider
-			value={{ currentCategory, images, changeCategory }}
+			value={{ currentCategory, images, changeCategory, categories }}
 		>
 			{children}
 		</GalleryContext.Provider>
