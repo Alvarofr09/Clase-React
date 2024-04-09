@@ -8,6 +8,7 @@ import { useAuthContext } from "../contexts/AuthContext";
 import { useThemeContext } from "../contexts/ThemeContext";
 import Counter from "../ejercicios/Counter";
 import Theme from "../ejercicios/Theme";
+import Gallery from "../ejercicios/Gallery";
 
 export default function Home() {
 	// Esta es la version que hemos remplazado, que tienes que usar tanto el uso del contexto como el contexto.
@@ -36,6 +37,7 @@ export default function Home() {
 			</p>
 			<Counter />
 			<Theme />
+			<Gallery />
 		</>
 	);
 }
