@@ -3,7 +3,9 @@
 // import { AuthContext } from "../contexts/AuthContext";
 
 // Importamos la funcion que nos da el contexto
+import { useEffect } from "react";
 import { useAuthContext } from "../contexts/AuthContext";
+import { useThemeContext } from "../contexts/ThemeContext";
 import Counter from "../ejercicios/Counter";
 import Theme from "../ejercicios/Theme";
 
@@ -14,6 +16,18 @@ export default function Home() {
 	// Y aquí en vez de usar el contexto directamente y ponerle el contexto dentro,
 	// usamos la funcion que nos usa el cotexto directamente
 	const { userInfo } = useAuthContext();
+	const { darkMode } = useThemeContext();
+
+	useEffect(() => {
+		const body = document.body;
+		if (darkMode) {
+			body.classList.remove("light-theme");
+			body.classList.add("dark-theme");
+		} else {
+			body.classList.remove("dark-theme");
+			body.classList.add("light-theme");
+		}
+	}, [darkMode]);
 	return (
 		<>
 			<h1>Home</h1>
