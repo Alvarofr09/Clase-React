@@ -7,6 +7,7 @@ export default function CharacterDetail() {
 	const { id } = useParams();
 	let prevId = parseInt(id) - 1;
 	let nextId = parseInt(id) + 1;
+	console.log(id);
 
 	useEffect(() => {
 		async function fetchApi() {
