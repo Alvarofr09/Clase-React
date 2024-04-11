@@ -14,7 +14,7 @@ const Item = styled(Paper)(({ theme }) => ({
 	color: theme.palette.text.secondary,
 }));
 
-export default function Characteres() {
+export default function CharactersMaterial() {
 	const [characteres, setCharacteres] = useState([]);
 
 	useEffect(function () {
