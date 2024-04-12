@@ -6,6 +6,9 @@ export default function Detalles() {
 	const [character, setCharacter] = useState({});
 	const { id } = useParams();
 	let prevId = parseInt(id) - 1;
+	if (prevId < 1) {
+		prevId = 1;
+	}
 	let nextId = parseInt(id) + 1;
 	console.log(id);
 
@@ -33,10 +36,10 @@ export default function Detalles() {
 			</div>
 
 			<div className="">
-				<Link className="link" to={`/character/${prevId}`}>
+				<Link className="link" to={`/${prevId}`}>
 					Anterior
 				</Link>
-				<Link className="link" to={`/character/${nextId}`}>
+				<Link className="link" to={`/${nextId}`}>
 					Siguiente
 				</Link>
 			</div>
