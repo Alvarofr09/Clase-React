@@ -9,7 +9,7 @@ export default function Login() {
 	const [user, setUser] = useState({ email: "", password: "" });
 
 	function handleInput(e) {
-		setUser({ ...user, [e.target.name]: [e.target.value] });
+		setUser({ ...user, [e.target.name]: e.target.value });
 	}
 
 	function handleSubmit(e) {
