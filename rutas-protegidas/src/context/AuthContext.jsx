@@ -1,7 +1,8 @@
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import { createContext, useState, useContext } from "react";
 
-const AuthContext = createContext({});
+export const AuthContext = createContext({});
 
 export const useAuthContext = () => {
 	return useContext(AuthContext);
@@ -25,5 +26,5 @@ export default function AuthContextProvider({ children }) {
 
 	const value = { auth, Login, Logout, errorMessage };
 
-	return <AuthContextProvider value={value}>{children}</AuthContextProvider>;
+	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
