@@ -30,6 +30,7 @@ export default function AuthContextProvider({ children }) {
 
 	function logout() {
 		setAuth(null);
+		localStorage.removeItem("user");
 	}
 
 	const value = { auth, login, logout, errorMessage };
