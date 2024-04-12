@@ -6,7 +6,7 @@ export const ThemeContext = createContext({
 });
 
 export default function ThemeContextProvider({ children }) {
-	const localTheme = localStorage.getItem("isDarkMode");
+	const localTheme = JSON.parse(localStorage.getItem("isDarkMode") || false);
 	console.log(localTheme);
 	const prefersMode = window.matchMedia("(prefers-color-scheme: dark)").matches
 		? true
