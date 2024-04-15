@@ -17,7 +17,6 @@ export default function Personajes() {
 
 	return (
 		<div className="container">
-			<h1>Rick and Morty</h1>
 			<div className="contenedor">
 				{personajes.map((character) => {
 					return (
