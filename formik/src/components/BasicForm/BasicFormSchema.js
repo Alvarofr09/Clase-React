@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-const passwordRules = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d){5,}$/;
+const passwordRules = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{5,}$/;
 
 export const BasicFormSchema = yup.object().shape({
 	email: yup.string().email("Invalid email").required("Email Required"),
