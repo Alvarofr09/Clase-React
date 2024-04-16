@@ -20,7 +20,7 @@ export default function AuthContextProvider({ children }) {
 	}, [auth]);
 
 	function login(user) {
-		if (user.email === "alvaro@gmail.com" && user.password === "1234") {
+		if (user.email === "alvaro@gmail.com" && user.password === "Alvaro1234") {
 			setAuth(user);
 			setErrorMessage("");
 		} else {
