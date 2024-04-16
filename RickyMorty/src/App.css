@@ -5,6 +5,27 @@
 	text-align: center;
 }
 
+.input-error {
+	border: 1px solid red;
+}
+
+.error {
+	color: red;
+	font-size: 10px;
+	margin-top: 0;
+}
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+input {
+	margin-bottom: 1rem;
+	padding: 0.5rem;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
 .logo {
 	height: 6em;
 	padding: 1.5em;
