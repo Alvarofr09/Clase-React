@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import BasicForm from "./components/BasicForm/BasicForm";
 
 function App() {
 	const [view, setView] = useState("basic");
@@ -10,6 +11,7 @@ function App() {
 				<h3 onClick={() => setView("basic")} style={{ color: view ?? "basic" }}>
 					Basic
 				</h3>
+				<BasicForm />
 				<h3
 					onClick={() => setView("advanced")}
 					style={{ color: view ?? "basic" }}
