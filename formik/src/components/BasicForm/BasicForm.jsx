@@ -86,8 +86,9 @@ export default function BasicForm() {
 				{errors.confirmPassword && touched.confirmPassword && (
 					<p className="error">{errors.confirmPassword}</p>
 				)}
-				<button disabled={isSubmitting}>Submit</button>
-				<p>{errors}</p>
+				<button type="submit" disabled={isSubmitting}>
+					Submit
+				</button>
 			</form>
 		</>
 	);
