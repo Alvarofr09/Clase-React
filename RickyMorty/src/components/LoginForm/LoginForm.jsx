@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import { LoginFormSchema } from "./LoginFormSchema";
 import { useAuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import "../../App.css";
 
 export default function Login() {
 	const {
@@ -22,7 +23,7 @@ export default function Login() {
 		onSubmit,
 	});
 
-	const { login } = useAuthContext;
+	const { login } = useAuthContext();
 	const navigate = useNavigate();
 
 	async function onSubmit(values, actions) {
