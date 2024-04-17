@@ -3,7 +3,7 @@ import { useAuthContext } from "../context/AuthContext";
 
 export default function Layout() {
 	const { auth, logout } = useAuthContext();
-
+	console.log(auth);
 	return (
 		<div>
 			<nav>
