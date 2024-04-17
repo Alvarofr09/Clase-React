@@ -27,15 +27,12 @@ export default function LoginForm() {
 
 	async function onSubmit(values, actions) {
 		const user = { email: values.email, password: values.password };
-		console.log(values);
-		console.log(user);
 
-		login(values.email, values.password);
+		login(user);
 		navigate("/");
 		actions.resetForm();
 	}
 
-	console.log(errors);
 	return (
 		<>
 			<form onSubmit={handleSubmit}>
