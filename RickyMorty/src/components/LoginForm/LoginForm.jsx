@@ -4,7 +4,9 @@ import { useAuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import "../../App.css";
 
-export default function Login() {
+export default function LoginForm() {
+	const { login } = useAuthContext();
+	const navigate = useNavigate();
 	const {
 		values,
 		errors,
@@ -23,16 +25,17 @@ export default function Login() {
 		onSubmit,
 	});
 
-	const { login } = useAuthContext();
-	const navigate = useNavigate();
-
 	async function onSubmit(values, actions) {
+		const user = { email: values.email, password: values.password };
 		console.log(values);
+		console.log(user);
 
 		login(values.email, values.password);
 		navigate("/");
 		actions.resetForm();
 	}
+
+	console.log(errors);
 	return (
 		<>
 			<form onSubmit={handleSubmit}>
@@ -64,6 +67,10 @@ export default function Login() {
 				)}
 				<button disabled={isSubmitting}>Submit</button>
 			</form>
+			<pre style={{ color: "white" }}>
+				{JSON.stringify({ values, errors }, null, 1)}
+			</pre>
+			;
 		</>
 	);
 }
