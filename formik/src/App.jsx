@@ -9,10 +9,10 @@ function App() {
 	return (
 		<div className="App">
 			<nav>
-				{/* <h3 onClick={() => setView("basic")} style={{ color: view ?? "basic" }}>
+				<h3 onClick={() => setView("basic")} style={{ color: view ?? "basic" }}>
 					Basic
 				</h3>
-				<BasicForm /> */}
+				<BasicForm />
 				<h3
 					onClick={() => setView("advanced")}
 					style={{ color: view ?? "basic" }}
