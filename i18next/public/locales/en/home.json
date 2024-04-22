@@ -1,0 +1,4 @@
+{
+    "title" : "Welcome to I18Next with React, <strong> {{name}} </strong>",
+    "button" : "Change language"
+}
