@@ -1,0 +1,41 @@
+#root {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
+	display: grid;
+	place-content: center;
+}
+
+ul,
+h4 {
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	border-radius: 200px;
+	height: auto;
+	width: 50px;
+}
+
+ul li {
+	border-radius: 4px;
+	border: 1px solid #eee;
+	list-style: none;
+	margin-bottom: 16px;
+	max-width: 320px;
+	padding: 8px 32px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+form input {
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	padding: 4px 6px;
+	margin: 0 4px;
+}
